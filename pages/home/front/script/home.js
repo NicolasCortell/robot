@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	
-	console.log( "MANGE MON CUL!" );
+	console.log( "MANGE MON CUL 222!" );
 
 	$.ajax({
 		url: "index.php?p=home&a=ajax_test",
