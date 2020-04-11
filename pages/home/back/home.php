@@ -1,7 +1,7 @@
 <?php
 
 //Database query (get everything from the [test] table)
-$res = $dbInstance->query("SELECT * FROM test");
+$res = $dbInstance->query("SELECT * FROM civility");
 
 //Template variables (will be used in the template)
 $template_vars = array();

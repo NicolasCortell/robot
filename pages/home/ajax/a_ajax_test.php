@@ -10,8 +10,8 @@ echo json_encode($result);
 */
 
 
-//stored procedure in \sql\stored_procedures\sp_test.sql
-$sqlQuery = "CALL sp_test_get(:code)";
+//stored procedure in \sql\stored_procedures\sp_customer_get.sql
+$sqlQuery = "CALL sp_customer_get(:code)";
 //parameters
 $params = array( "code" => $_POST["myKey"] );
 //execute query
