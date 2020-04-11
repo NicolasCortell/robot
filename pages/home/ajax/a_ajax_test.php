@@ -1,9 +1,21 @@
 <?php
-
 /*
 $params = array(
-    "code" => $_POST["testKey"]
+    "code" => $_POST["myKey"], //MME
+    "id" => 2 
 );
-echo json_encode($dbInstance->query("SELECT * FROM test WHERE code = :code ", $params));
+$sqlQuery = "SELECT * FROM test WHERE code = :code AND id = :id ";
+$result = $dbInstance->query($sqlQuery, $params);
+echo json_encode($result);
 */
-echo json_encode($dbInstance->query("CALL sp_test_get(?)", array( $_POST["testKey"] )));
+
+
+//stored procedure in \sql\stored_procedures\sp_test.sql
+$sqlQuery = "CALL sp_test_get(:code)";
+//parameters
+$params = array( "code" => $_POST["myKey"] );
+//execute query
+$result = $dbInstance->query($sqlQuery, $params);
+//return result (array is jsonified)
+echo json_encode($result);
+

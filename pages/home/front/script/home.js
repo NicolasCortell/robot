@@ -1,17 +1,25 @@
 $( document ).ready(function() {
 	
-	console.log( "MANGE MON CUL 333!" );
+	console.log( "Document is ready" );
 
+	$("th").on("click", function(){
+		callAjax($(this).attr("id"));
+	});
+
+});
+
+
+
+function callAjax(selectedId){
 	$.ajax({
 		url: "index.php?p=home&a=ajax_test",
 		type: "post",
 		data: {
-			testKey : "MME"
+			myKey : selectedId
 		},
 		success:function(result){
 			let res = JSON.parse(result);
-			console.log(res);
+			$("#"+res[0]["code"]).css("background-color", "green");
 		}
 	});
-
-});
+}

@@ -1,7 +1,7 @@
 <?php
 
-class DatabaseLayer
-{
+class DatabaseLayer{
+
 	# @object, The PDO object
 	private $pdo;
 
@@ -20,7 +20,7 @@ class DatabaseLayer
 	# @array, The parameters of the SQL query
 	private $parameters_exploded;
 		
-       /**
+    /**
 	*   Default Constructor 
 	*
 	*	2. Connect to database.
@@ -91,21 +91,25 @@ class DatabaseLayer
 			# Prepare query
 			$this->sQuery = $this->pdo->prepare($query);
 
+			# Add parameters to the parameter array	
+			$this->bindMore($parameters);
+
 			# Bind parameters
-			if(!empty($parameters)) {
-				$iter = 1;
-				foreach($parameters as $param) {
-					if ( $param === NULL ) {
-						$this->sQuery->bindParam($iter, $param, PDO::PARAM_NULL);
+			if(!empty($this->parameters)) {
+				foreach($this->parameters as $param){
+					$parameters = explode("\x7F",$param);
+					$this->parameters_exploded[$parameters[0]] = $parameters[1];
+					if ( $parameters[1] === NULL ) {
+						$this->sQuery->bindParam($parameters[0], $parameters[1], PDO::PARAM_NULL);
 					} else {
-						$this->sQuery->bindParam($iter, $param);
+						$this->sQuery->bindParam($parameters[0], $parameters[1]);
 					}
-					$iter++;
 				}		
 			}
 
 			# Execute SQL 
 			$this->succes = $this->sQuery->execute();		
+
 		}
 		catch(PDOException $e) {
 			# Write into log and display Exception
@@ -149,15 +153,15 @@ class DatabaseLayer
 	}
 
     /**
-	*   	If the SQL query  contains a SELECT or SHOW statement it returns an array containing all of the result set row
+	*   If the SQL query  contains a SELECT or SHOW statement it returns an array containing all of the result set row
 	*	If the SQL statement is a DELETE, INSERT, or UPDATE statement it returns the number of affected rows
 	*
-	*   	@param  string $query
+	*   @param  string $query
 	*	@param  array  $params
 	*	@param  int    $fetchmode
 	*	@return mixed
 	*/			
-	public function query($query,$params = null, $fetchmode = PDO::FETCH_ASSOC) {
+	public function query($query, $params = null, $fetchmode = PDO::FETCH_ASSOC) {
 		$query = trim($query);
 
 		$this->Init($query,$params);
@@ -181,6 +185,7 @@ class DatabaseLayer
 		} else {
 			return NULL;
 		}
+
 	}
 		
 	/**
