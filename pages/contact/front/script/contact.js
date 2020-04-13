@@ -1,33 +1,57 @@
-const first_name = document.getElementById("first_name");
-const last_name = document.getElementById("last_name");
-const email = document.getElementById("email");
-const msg = document.getElementById("msg");
-const btn = document.getElementById("btn");
 
-let all_msg_received = [];
+//when the page is ready
+$(document).ready(function(){
 
-class message_received{
-    constructor(first_name,last_name,email,msg){
-        this.first_name = first_name,
-        this.last_name = last_name,
-        this.email = email,
-        this.msg = msg;
-    };
-};
+    //on form submit (btn type="submit")
+    $('#form').submit(function(e){
 
-function envoyer_msg(){
-    // Verif if input is not null
-    if(first_name.value=="" || last_name.value=="" || email=="" || msg==""){
-        alert("Merci de remplir les champs");
-    }
-    else{
-        let new_msg = new message_received(first_name.value,last_name.value,email.value,msg.value);
-        all_msg_received.push(new_msg);
-        //alert(`NOM & PRENOM : ${new_msg.first_name} & ${new_msg.last_name}`);
-    };
-};
+        //we cancel the default operation (the page normally reload itself)
+        e.preventDefault();
 
+        //check form validity
+        if(!checkForm()){
+            alert("Erreur");
+            return;
+        }
 
-btn.addEventListener("click",()=>{
-    envoyer_msg();
+        //send form values to PHP with ajax call
+        $.ajax({
+            url: "index.php?p=contact&a=send_email",
+            type: "post",
+            data: { 
+                firstName : $("#first_name").val(), 
+                lastName : $("#last_name").val(), 
+                email : $("#email").val(),
+                msg : $("#msg").val() 
+            },
+            success:function(result){
+                /*if(result == ok){
+                    masque le formulaire
+                    affiche "message envoyé"
+                }else{
+                    affiche "une erreur est survenue"
+                }*/
+            }
+        });
+
+    });
+
 });
+
+
+
+
+/**
+ * Verify form validity checking each input value length
+ * return true when form is valid
+ */
+function checkForm(){
+    //for each "input" in the form with id #form
+    $("#form input").each(function(){
+        //trim : remove whitespaces
+        if($.trim($(this).val()).length == 0){
+            return false;
+        }
+    });
+    return true;
+}

@@ -1,7 +1,7 @@
 <?php $this->insert('common/front/_tpl_header') ?>
 
 <div class="row">
-    <form class="col s12">
+    <form class="col s12" id="form">
 
     <div class="row">
       <h4 class="input-field offset-s2 col s6">Nous conctater</h4>
