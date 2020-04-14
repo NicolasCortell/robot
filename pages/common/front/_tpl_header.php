@@ -35,7 +35,7 @@
             <div class="col s1"></div>
         </div>
 
-        <div id="left-menu" style="float:left;margin-left:10%;margin-top:5px;">
+        <div id="left-menu">
             <p>Catégories</p>
             <ul>Recettes
                 <li>Entrée</li>

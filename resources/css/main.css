@@ -79,6 +79,9 @@ body {
 }
 
 #left-menu{
+	float:left;
+	margin-left:10%;
+	margin-top:5px;
 	color:#4E5D6A;
 }
 #left-menu li { 
