@@ -35,6 +35,24 @@
             <div class="col s1"></div>
         </div>
 
+        <div id="left-menu" style="float:left;margin-left:10%;margin-top:5px;">
+            <p>Catégories</p>
+            <ul>Recettes
+                <li>Entrée</li>
+                <li>Plat</li>
+                <li>Dessert</li>
+                <li>Boisson</li>
+                <li>Vegan</li>
+                <li>Rapide</li>
+            </ul>
+            <ul>Robots
+                <li>Thermomix</li>
+                <li>Moulinex</li>
+                <li>Cookéo</li>
+                <li>Délimix</li>
+            </ul>
+        </div>
+
         <div class="container">
             <div id="separator"></div>
         

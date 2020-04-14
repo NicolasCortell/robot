@@ -78,6 +78,17 @@ body {
 	color: #7BED8D;
 }
 
+#left-menu{
+	color:#4E5D6A;
+}
+#left-menu li { 
+	cursor:pointer;
+	padding-left: 1em;
+	color:#748A9D;
+}
+#left-menu li:hover{
+	font-weight: bold;
+}
 
 
   
