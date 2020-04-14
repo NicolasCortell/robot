@@ -1,6 +1,107 @@
+
 body {
+	font-family: acumin-pro,sans-serif; 
+	font-style: normal;
 	margin: 0;
+	background-color:#F0F4F8;
 }
+
+#menu{
+	margin-bottom: 0px;
+	background-color:#FFFFFF;
+	padding:15px;
+}
+
+#separator{
+	height: 2px;
+	background-color: #A6BCD0;
+}
+
+
+#brand-logo-txt { 
+	font-weight: bold;
+	color : #7BED8D !important;
+	font-size: 2.28rem;
+}
+
+
+.menu-item {
+	color:#4E5D6A !important;
+	cursor:pointer;
+}
+
+
+.menu-item:hover {
+	color:#7BED8D !important;
+	background-color: transparent !important;
+}
+
+.menu-item:hover > .svg-icon {
+	background-image: url(../img/cooker_green.svg);
+}
+	
+.svg-icon{
+	width: 22px;
+	height: 22px;
+	margin-right: 2px;
+	background-size: cover; 
+	background-image: url(../img/cooker.svg);
+	fill:#4e5d6a
+}
+
+#search {
+	margin-right: 30px;
+	height: 50px;
+	vertical-align: middle;
+	color : #A6BCD0;
+	background-color : #F0F4F8;
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#search input {
+	border-bottom: 0px;
+	box-shadow: 0 0px 0 0 transparent;
+}
+#search ::placeholder {
+	color : #A6BCD0;
+	opacity: 1; 
+}
+#search label {
+	color: #A6BCD0;
+}
+#search  input:focus + label {
+	color: #7BED8D;
+}
+
+#search .prefix.active {
+	color: #7BED8D;
+}
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 th, td {
     font-weight:normal;
@@ -15,4 +116,6 @@ th {
 	line-height: 20px;
 	font-size: 14px;
 }
+
+
 
