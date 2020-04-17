@@ -1,6 +1,6 @@
 CREATE TABLE robot.recipe_ingredient (
   id INT NOT NULL AUTO_INCREMENT,
-  id_recipe_categoy INT NOT NULL,
+  id_recipe INT NOT NULL,
   id_ingredient INT NOT NULL,
   detail TEXT,
   quantity INT(2) NOT NULL,
