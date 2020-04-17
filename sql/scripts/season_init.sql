@@ -1,0 +1,9 @@
+CREATE TABLE robot.season (
+  id INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(50) NOT NULL,
+  PRIMARY KEY (id),
+  INDEX(id)
+)
+ENGINE = INNODB;
+
+INSERT INTO robot.season VALUES
