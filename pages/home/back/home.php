@@ -1,5 +1,5 @@
 <?php
-
+/*
 //Database query (get everything from the [test] table)
 $res = $dbInstance->query("SELECT * FROM civility");
 
@@ -7,8 +7,9 @@ $res = $dbInstance->query("SELECT * FROM civility");
 $template_vars = array();
 $template_vars["tests"] = $res;
 $template_vars["prenom"] = "Nicolas";
-$template_vars["nom"] = "Redard";
+$template_vars["nom"] = "Redard";*/
 
+$template_vars = array();
 
 // Render template
 echo $templates->render('home/front/tpl_home', $template_vars);
