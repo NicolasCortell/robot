@@ -22,10 +22,14 @@ if(file_exists(SYS_PATH_LOCAL."includes/database/init_database_local.php")){
     require_once 'database/init_database.php';
 }
 
-
 // Template engine
 require_once 'resources/plugins/template_engine/plates-3.1.1/src/Engine.php';
-$templates = new League\Plates\Engine(($isLocal ? SYS_PATH_LOCAL : SYS_PATH) . '\pages');
+$templates = null;
+if($isLocal){
+	$templates = new League\Plates\Engine(SYS_PATH_LOCAL . '\pages');
+}else{
+	$templates = new League\Plates\Engine(SYS_PATH . '/pages');
+}
 
 // Require the functions file
 require_once 'includes/functions.php';
