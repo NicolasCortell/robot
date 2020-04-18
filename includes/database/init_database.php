@@ -9,9 +9,9 @@
     //Initialize $dbInstance (DB connexion)
     $dbInstance = new DatabaseLayer( 
         "localhost",
-        "root",
-        "",
-        "robot" 
+        "u699560698_root",
+        "qvYPmQjQ42$",
+        "u699560698_robot" 
     );
     
 ?>
