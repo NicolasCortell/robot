@@ -16,7 +16,7 @@ require_once 'database/init_database.php';
 
 // Template engine
 require_once 'resources/plugins/template_engine/plates-3.1.1/src/Engine.php';
-$templates = new League\Plates\Engine(SYS_PATH . '\pages');
+$templates = new League\Plates\Engine(SYS_PATH . '/pages');
 
 // Require the functions file
 require_once 'includes/functions.php';

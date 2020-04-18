@@ -2,18 +2,18 @@ $( document ).ready(function() {
 	
 	console.log( "Document is ready" );
 	
-	$("th").each(function(){
+	/*$("th").each(function(){
 		$(this).css("cursor", "pointer");
 	});
 
 	$("th").on("click", function(){
 		callAjax($(this).attr("id"));
-	});
+	});*/
 
 });
 
 
-
+/*
 function callAjax(selectedId){
 	$.ajax({
 		url: "index.php?p=home&a=ajax_test",
@@ -48,4 +48,4 @@ function callAjax(selectedId){
 			
 		}
 	});
-}
+}*/
