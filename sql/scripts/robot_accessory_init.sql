@@ -7,6 +7,6 @@ CREATE TABLE robot.robot_accessory (
   INDEX(id),
   CONSTRAINT fk_robot FOREIGN KEY (id_robot) REFERENCES robot.robot(id)
 )
-ENGINE = INNODB;
+ENGINE = INNODB CHARACTER SET utf8 COLLATE utf8_bin;
 
 INSERT INTO robot.robot_accessory VALUES

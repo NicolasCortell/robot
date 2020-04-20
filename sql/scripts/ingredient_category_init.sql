@@ -4,6 +4,6 @@ CREATE TABLE robot.ingredient_category (
   PRIMARY KEY (id),
   INDEX(id)
 )
-ENGINE = INNODB;
+ENGINE = INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 INSERT INTO robot.ingredient_category VALUES

@@ -4,6 +4,6 @@ CREATE TABLE robot.season (
   PRIMARY KEY (id),
   INDEX(id)
 )
-ENGINE = INNODB;
+ENGINE = INNODB CHARACTER SET utf8 COLLATE utf8_bin;
 
 INSERT INTO robot.season VALUES

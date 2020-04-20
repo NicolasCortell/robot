@@ -11,7 +11,7 @@ CREATE TABLE robot.recipe (
   INDEX(id),
   CONSTRAINT fk_recipe_category FOREIGN KEY (id_recipe_category) REFERENCES robot.recipe_category(id)
 )
-ENGINE = INNODB;
+ENGINE = INNODB CHARACTER SET utf8 COLLATE utf8_bin;
 
 INSERT INTO robot.recipe VALUES
 

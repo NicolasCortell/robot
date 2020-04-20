@@ -7,9 +7,9 @@ CREATE TABLE robot.recipe_step (
 
   PRIMARY KEY (id),
   INDEX(id),
-  CONSTRAINT fk_id_recipe FOREIGN KEY (id_recipe) REFERENCES robot.recipe(id),
-  CONSTRAINT fk_id_robot_accessory FOREIGN KEY (id_robot_accessory) REFERENCES robot.robot_accessory(id)
+  CONSTRAINT fk_recipe FOREIGN KEY (id_recipe) REFERENCES robot.recipe(id),
+  CONSTRAINT fk_robot_accessory FOREIGN KEY (id_robot_accessory) REFERENCES robot.robot_accessory(id)
 )
-ENGINE = INNODB;
+ENGINE = INNODB CHARACTER SET utf8 COLLATE utf8_bin;
 
 INSERT INTO robot.recipe_step VALUES
