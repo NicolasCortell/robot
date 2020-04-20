@@ -4,7 +4,7 @@
 require_once('includes/init.php');
 
 // Rooting
-$page = 'contact';
+$page = 'home';
 switch(isset($_GET['p']) ? $_GET['p'] : '') {
     case 'home': $page = 'home';  break;
     case 'contact': $page = 'contact';  break;
