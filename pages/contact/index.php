@@ -6,7 +6,7 @@ if ( isset($_GET['a']) ) {
 
     // include the ajax file
     switch($_GET['a']) {
-        case 'send_email': $ajax_url = 'a_send_email'; break;
+        case 'ajax_test': $ajax_url = 'a_ajax_test'; break;
     }
 
     if ( isset($ajax_url) ) {
