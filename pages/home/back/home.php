@@ -11,4 +11,5 @@ $template_vars["nom"] = "Redard";*/
 
 
 // Render template
+require_once ('pages/common/back/header.php');
 echo $templates->render('home/front/tpl_home', $template_vars);

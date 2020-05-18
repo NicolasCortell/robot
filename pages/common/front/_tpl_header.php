@@ -61,12 +61,9 @@
         <div id="left-menu" class="hide-on-small-only txt-dark-blue">
             <p>Catégories</p>
             <ul>Recettes
-                <li>Entrée</li>
-                <li>Plat</li>
-                <li>Dessert</li>
-                <li>Boisson</li>
-                <li>Vegan</li>
-                <li>Rapide</li>
+            <?php foreach($categories as $category): ?>
+                <li id='<?=$category['id']?>'><?=$category["name"];?></li>
+            <?php endforeach ?>
             </ul>
             <ul>Robots
                 <li>Thermomix</li>
