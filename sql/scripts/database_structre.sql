@@ -68,6 +68,7 @@ ENGINE = INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE TABLE recipe_category (
   id INT NOT NULL AUTO_INCREMENT,
   name VARCHAR(50) NOT NULL COLLATE utf8_general_ci,
+  display_order INT NOT NULL,
 
   PRIMARY KEY (id),
   INDEX(id)
