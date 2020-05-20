@@ -51,8 +51,8 @@ class DatabaseLayer{
 			# We can now log any exceptions on Fatal error. 
 			$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			
-			# Disable emulation of prepared statements, use REAL prepared statements instead.
-			$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+			# Enable emulation of prepared statements.
+			$this->pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
 			
 			# Connection succeeded, set the boolean to true.
 			$this->bConnected = true;

@@ -61,15 +61,14 @@
         <div id="left-menu" class="hide-on-small-only txt-dark-blue">
             <p>Catégories</p>
             <ul>Recettes
-            <?php foreach($categories as $category): ?>
-                <li id='<?=$category['id']?>'><?=$category["name"];?></li>
-            <?php endforeach ?>
+                <?php foreach($categories as $category): ?>
+                    <li id='<?=$category['id']?>'><?=$category["name"];?></li>
+                <?php endforeach ?>
             </ul>
             <ul>Robots
-                <li>Thermomix</li>
-                <li>Moulinex</li>
-                <li>Cookéo</li>
-                <li>Délimix</li>
+                <?php foreach($robots as $robot): ?>
+                    <li id='<?=$robot['id']?>'><?=$robot["name"];?></li>
+                <?php endforeach ?>
             </ul>
         </div>
 
